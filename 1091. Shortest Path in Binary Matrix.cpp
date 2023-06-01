@@ -52,12 +52,38 @@ public:
 };
 
 /*
-The priority_queue pq in this code does not directly take its contents from 'grid'. Instead, the pq is used to store cell coordinates along with their corresponding distances.
+•The priority_queue pq in this code does not directly take its contents from 'grid'.
+Instead, the pq is used to store cell coordinates along with their corresponding distances.
 
-The algorithm uses the pq to explore the cells in the grid and determine the shortest path. It starts by pushing the starting cell's coordinates (0, 0) into the pq with a distance of 0.
+•The algorithm uses the pq to explore the cells in the grid and determine the shortest path.
+It starts by pushing the starting cell's coordinates (0, 0) into the pq with a distance of 0.
 
-Then, in the while loop, it repeatedly pops the top cell from the pq, retrieves its coordinates and distance, and performs certain operations based on the cell's properties.
+•Then, in the while loop, it repeatedly pops the top cell from the pq, retrieves its coordinates and distance, 
+and performs certain operations based on the cell's properties.
 
-When exploring neighboring cells, the algorithm calculates the coordinates of these cells based on the current cell's coordinates. It checks if the neighboring cell is within the grid bounds and is unblocked (contains 0) in the grid. If so, it calculates the distance to the neighboring cell and pushes the neighboring cell's coordinates and updated distance into the pq.
+•When exploring neighboring cells, the algorithm calculates the coordinates of these cells based on the current cell's coordinates.
+It checks if the neighboring cell is within the grid bounds and is unblocked (contains 0) in the grid.
+If so, it calculates the distance to the neighboring cell and pushes the neighboring cell's coordinates and updated distance into the pq.
 
-So, the pq is not directly populated with the contents of the grid. It uses the grid information to explore cells and determine their distances, and then stores these cell coordinates and distances in the pq for further processing.
+•So, the pq is not directly populated with the contents of the grid. 
+It uses the grid information to explore cells and determine their distances, 
+and then stores these cell coordinates and distances in the pq for further processing.
+
+chatgpt explanation: The code you provided appears to implement a variation of the Breadth-First Search (BFS) algorithm.
+
+BFS is a graph traversal algorithm that explores all the vertices of a graph in breadth-first order,
+i.e., it visits all the vertices at the same level before moving to the next level. 
+It starts from a given source vertex and explores its neighbors before moving to the next level of vertices.
+
+In your code, the algorithm explores the cells of a binary matrix by using a priority queue.
+It starts from the top-left cell (0, 0) and proceeds to explore neighboring cells in a breadth-first manner.
+The priority queue is used to store cells and their corresponding distances from the starting cell.
+
+The algorithm continuously pops the cell with the minimum distance from the priority queue and examines its neighboring cells.
+If a neighboring cell is unblocked (contains 0) and within the grid bounds, it is added to the priority queue with an updated distance.
+This process continues until either the destination cell (n-1, n-1) is reached or all possible paths have been explored.
+
+Therefore, while not an exact implementation of BFS, the code you provided shares 
+similarities with BFS in terms of exploring neighboring cells in a breadth-first 
+manner and using a priority queue to manage the order of cell exploration based on their distances.
+*/
