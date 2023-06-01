@@ -9,8 +9,11 @@ public:
             return -1;  // If the starting cell is blocked, return -1 indicating no path is possible
         }
         
+        
+ //Defines a priority queue named 'pq' to store cells with their distances from the starting cell.
+//The priority queue is implemented as a min-heap, and it stores pairs of distance and cell coordinates.       
         priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, greater<pair<int, pair<int, int>>>> pq;
-        // Priority queue to store cells with their distances from the starting cell
+        
         
         pq.push({0, {0, 0}});  // Push the starting cell with distance 0 to the priority queue
         
